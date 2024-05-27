@@ -5,9 +5,9 @@ import cy.markelova.university.util.StudentAction;
 
 public class Student implements CommonAction, StudentAction {
 
-    String fullName = null;
+    String fullName;
 
-    Student(String fullName) {
+    public Student(String fullName) {
         this.fullName = fullName;
     }
 
@@ -24,10 +24,10 @@ public class Student implements CommonAction, StudentAction {
     }
 
     public void doHomework(String subject) {
-        System.out.println("I'm doing my homework on " + subject + ".");
+        System.out.println("I'm doing my " + subject + " homework.");
     }
 
     public void haveLunch() {
-        System.out.println("I'm a student and I eat the cheapest pie");
+        System.out.println("As a student, I eat the cheapest pie.");
     }
 }
