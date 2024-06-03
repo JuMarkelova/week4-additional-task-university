@@ -8,33 +8,27 @@ import cy.markelova.university.util.ActionDriver;
 public class _Main {
 
     public static void main(String[] args) {
-//        Объявление сущностей для работы программы
         University university = new University();
-        Student student1 = new Student("Petr Petrov");
-        Student student2 = new Student("Margarita Margaritkina");
+        Student student1 = new Student("Petr Petrov", university);
+        Student student2 = new Student("Margarita Margaritkina", university);
         Lecturer lecturer1 = new Lecturer("Vasiliy Vasilevich");
-        Lecturer lecturer2 = new Lecturer("Valentina Vakentinovna", university.subjects[1]);
-        university.studentsArray = new Student[]{student1, student2};
-        university.lecturersArray = new Lecturer[]{lecturer1, lecturer2};
-        lecturer1.setSubject(university.subjects[0]);
+        Lecturer lecturer2 = new Lecturer("Valentina Vakentinovna", university.getSubjects(1), university);
+        university.setStudentsArray(new Student[]{student1, student2});
+        university.setLecturersArray(new Lecturer[]{lecturer1, lecturer2});
+        lecturer1.setSubject(university.getSubjects(0));
         ActionDriver actionDriver = new ActionDriver();
-
-//        Вызов методов через общий интерфейс для студента
+//        Calling methods through a CommonInterface for the student
         actionDriver.makeGoToTheUniversity(student1);
         actionDriver.makeHaveLunch(student1);
-
-//        Вызов методов через интерфейс именно для студентов
+//        Calling methods through the StudentInterface
         actionDriver.makeStudentDoHomework(student2, "math");
         actionDriver.makeStudentPrepareExam(student2);
         actionDriver.makeStudentHaveExam(student2, "math");
-
         System.out.println();
-
-//        Вызов методов через общий интерфейс для лектора
+//        Calling methods through a CommonInterface for the lecturer
         actionDriver.makeGoToTheUniversity(lecturer1);
         actionDriver.makeHaveLunch(lecturer1);
-
-//        Вызов методов через интерфейс именно для лектора
+//        Calling methods through the LecturerInterface
         actionDriver.makeLecturerCheckHomework(lecturer2);
         actionDriver.makeLecturerGiveLesson(lecturer1);
         actionDriver.makeLecturerConductExam(lecturer2);

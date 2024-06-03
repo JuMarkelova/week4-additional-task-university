@@ -1,14 +1,36 @@
 package cy.markelova.university.entity;
 
-import cy.markelova.university.util.CommonAction;
-import cy.markelova.university.util.StudentAction;
+public class Student implements CommonInterface, StudentInterface {
+    private University university;
+    private String fullName;
+    private Lecturer lecturer;
 
-public class Student implements CommonAction, StudentAction {
-
-    String fullName;
-
-    public Student(String fullName) {
+    public Student(String fullName, University university) {
         this.fullName = fullName;
+    }
+
+    public University getUniversity() {
+        return university;
+    }
+
+    public void setUniversity(University university) {
+        this.university = university;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public Lecturer getLecturer() {
+        return lecturer;
+    }
+
+    public void setLecturer(Lecturer lecturer) {
+        this.lecturer = lecturer;
     }
 
     public void goToUniversity() {

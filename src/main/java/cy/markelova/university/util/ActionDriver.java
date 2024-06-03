@@ -1,36 +1,40 @@
 package cy.markelova.university.util;
 
+import cy.markelova.university.entity.CommonInterface;
+import cy.markelova.university.entity.LecturerInterface;
+import cy.markelova.university.entity.StudentInterface;
+
 public class ActionDriver {
 
-    public void makeGoToTheUniversity(CommonAction commonAction) {
+    public void makeGoToTheUniversity(CommonInterface commonAction) {
         commonAction.goToUniversity();
     }
 
-    public void makeHaveLunch(CommonAction commonAction) {
+    public void makeHaveLunch(CommonInterface commonAction) {
         commonAction.haveLunch();
     }
 
-    public void makeStudentDoHomework(StudentAction student, String subject) {
+    public void makeStudentDoHomework(StudentInterface student, String subject) {
         student.doHomework(subject);
     }
 
-    public void makeStudentPrepareExam(StudentAction student) {
+    public void makeStudentPrepareExam(StudentInterface student) {
         student.prepareExam();
     }
 
-    public void makeStudentHaveExam(StudentAction student, String subject) {
+    public void makeStudentHaveExam(StudentInterface student, String subject) {
         student.haveExam(subject);
     }
 
-    public void makeLecturerCheckHomework(LecturerAction lecturer) {
+    public void makeLecturerCheckHomework(LecturerInterface lecturer) {
         lecturer.checkHomework();
     }
 
-    public void makeLecturerGiveLesson(LecturerAction lecturer) {
+    public void makeLecturerGiveLesson(LecturerInterface lecturer) {
         lecturer.giveLesson();
     }
 
-    public void makeLecturerConductExam(LecturerAction lecturer) {
+    public void makeLecturerConductExam(LecturerInterface lecturer) {
         lecturer.conductExam();
     }
 }

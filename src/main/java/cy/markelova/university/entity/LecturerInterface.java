@@ -1,6 +1,6 @@
-package cy.markelova.university.util;
+package cy.markelova.university.entity;
 
-public interface LecturerAction {
+public interface LecturerInterface {
 
     void checkHomework();
 
