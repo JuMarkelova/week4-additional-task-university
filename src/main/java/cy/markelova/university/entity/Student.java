@@ -1,6 +1,6 @@
 package cy.markelova.university.entity;
 
-public class Student implements CommonInterface, StudentInterface {
+public class Student implements PersonInterface, StudentInterface {
     private University university;
     private String fullName;
     private Lecturer lecturer;

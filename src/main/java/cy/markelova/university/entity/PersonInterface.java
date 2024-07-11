@@ -1,6 +1,6 @@
 package cy.markelova.university.entity;
 
-public interface CommonInterface {
+public interface PersonInterface {
 
     void goToUniversity();
 
